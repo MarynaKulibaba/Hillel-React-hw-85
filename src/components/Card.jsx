@@ -1,17 +1,23 @@
 import React from 'react';
 
 class Card extends React.Component {
+    render() {
+        const { title, text } = this.props;
 
-    render (){
         return (
             <div className="card">
                 <div className="card-body">
-                    {this.props.title && <h4 className="card-title"> </h4>}
-                    {this.props.text && <p className="card-text"></p>}
+                    {title && <h4 className="card-title">{title}</h4>}
+                    {text && <p className="card-text">{text}</p>}
                 </div>
             </div>
-        )
+        );
     }
 }
+
+// Card.defaultProps = {
+//     text: 'how are you?',
+//     title: 'hi'
+// };
 
 export default Card;
